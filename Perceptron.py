@@ -50,7 +50,7 @@ for i in range(epochs):
   toc = time.time()
   wn = w_i.T + (alpha*dw)
   w_i = wn.T
-  epoch = i
+  epochs = i
   costo.append(np.mean((t-yp)**2,axis=0))
 
   if costo[i] == 0:
@@ -58,7 +58,7 @@ for i in range(epochs):
 
 #grafica epocas vs costo 
 print(epoch)
-plt.plot(range(epoch+1), costo)
+plt.plot(range(epochs+1), costo)
 plt.show()
 
 #Boundaries 
@@ -69,7 +69,7 @@ ejey = -b / w2
 d = ejey
 c = -ejey / ejex
 
-line_x_coords = np.array([0, X])
+line_x_coords = np.array([0, ejex])
 line_y_coords = c * line_x_coords + d
 
 plt.plot(line_x_coords, line_y_coords)
